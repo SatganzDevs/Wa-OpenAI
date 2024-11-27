@@ -62,8 +62,8 @@ module.exports = sansekai = async (client, m, chatUpdate) => {
       );
     }
     if (budy) {
-    let res = await fetchJson(`https://api.ryzendesu.vip/api/ai/chatgpt?text=${encodeURIComponent(budy)}&prompt=jadilah%20bot%20yang%20ramah%20dan%20informative%20bernama%20Vinn%2C%20siap%20membantu%20pengguna%20dengan%20jawaban%20akurat%20dan%20cepat`);
-    m.reply(res.response);
+    let res = await axios.get(`https://api.ryzendesu.vip/api/ai/chatgpt?text=${encodeURIComponent(budy)}&prompt=jadilah%20bot%20yang%20ramah%20dan%20informative%20bernama%20Vinn%2C%20siap%20membantu%20pengguna%20dengan%20jawaban%20akurat%20dan%20cepat`);
+    m.reply(res.data.response);
     }
   } catch (err) {
     m.reply(util.format(err));
