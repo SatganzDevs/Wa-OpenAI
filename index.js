@@ -1,5 +1,4 @@
-const sessionName = "yusril";
-const donet = "https://saweria.co/sansekai";
+const sessionName = "session";
 const {
   default: sansekaiConnect,
   useMultiFileAuthState,
@@ -11,7 +10,7 @@ const {
   getContentType,
   Browsers, 
   fetchLatestWaWebVersion
-} = require("@whiskeysockets/baileys");
+} = require("baileys");
 const pino = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
@@ -251,9 +250,8 @@ async function startHisoka() {
     } else if (connection === "open") {
       const botNumber = await client.decodeJid(client.user.id);
       console.log(color("Bot success conneted to server", "green"));
-      console.log(color("Donate for creator https://saweria.co/sansekai", "yellow"));
       console.log(color("Type /menu to see menu"));
-      client.sendMessage(botNumber, { text: `Bot started!\n\njangan lupa support ya bang :)\n${donet}` });
+      client.sendMessage(botNumber, { text: `Bot Connected!` });
     }
     // console.log('Connected...', update)
   });
